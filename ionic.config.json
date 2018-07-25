@@ -1,0 +1,7 @@
+{
+  "name": "SAAF_movil",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
