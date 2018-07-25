@@ -22,7 +22,7 @@ import { HomePage } from './home.page';
 })
 export class HomePageModule {
     public userData = [        
-        username : 'jaasiel',
+        username : 'Jaasiel',
         id : 5        
     ];
 }
