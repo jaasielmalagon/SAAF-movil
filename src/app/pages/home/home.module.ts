@@ -21,8 +21,5 @@ import { HomePage } from './home.page';
   declarations: [HomePage]
 })
 export class HomePageModule {
-    public userData = [        
-        username : 'Jaasiel',
-        id : 5        
-    ];
+    public userData = 'JAASIEL';
 }
