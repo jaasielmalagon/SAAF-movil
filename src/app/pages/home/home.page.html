@@ -1,16 +1,29 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>
-        SAAF v1.0
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button *ngIf="userData != null"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>
+            SAAF {{version}}
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the
-    <a target="_blank" href="https://ionicframework.com/docs">{{userData}}</a> will be your guide.</p>
+<ion-content padding>                    
+    <ion-card>
+        <ion-img src="/assets/image/AVANTELOGO-01.png"></ion-img>
+        <ion-card-content>
+            <ion-card-title>Bienvenido a SAAF {{version}}</ion-card-title>
+            <p>Por favor ingrese su usuario y contraseña para continuar.</p>            
+                <ion-item>
+                    <ion-label position="floating">Usuario:</ion-label>
+                    <ion-input [(ngModel)]="loginData.username" clearInput required type="text" autocomplete maxlength="10"></ion-input>                
+                </ion-item>
+                <ion-item>
+                    <ion-label position="floating">Contraseña:</ion-label>
+                    <ion-input [(ngModel)]="loginData.password" clearInput required type="password" autocomplete maxlength="10"></ion-input>
+                </ion-item>            
+                <ion-button (click)="login();" expand="block" color="danger" round>Ingresar</ion-button>            
+        </ion-card-content>
+    </ion-card>
 </ion-content>
