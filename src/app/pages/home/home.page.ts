@@ -18,7 +18,7 @@ export class HomePage {
     login(): void {
         let user = this.loginData.username;
         let pw = this.loginData.password;
-        this.userData = this.repo.getUser(user, pw);      
-//        console.log(this.userData);  
+        this.userData = this.repo.getUser(user, pw);
+        console.log(this.userData);
     }
 }
