@@ -11,6 +11,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {ComponentsModule} from './components/components.module';
 
 import {ModelModule} from './model/model.module';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
     declarations: [AppComponent],
@@ -20,7 +21,8 @@ import {ModelModule} from './model/model.module';
         IonicModule.forRoot(),
         AppRoutingModule,
         ComponentsModule,
-        ModelModule
+        ModelModule,
+        FormsModule
     ],
     providers: [
         StatusBar,

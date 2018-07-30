@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
-import {User} from './Objects/user.model';
 import {RestDataSource} from './rest.datasource';
+import {Observable} from 'rxjs';
+import {User} from './Objects/user.model';
 
 @Injectable()
 export class UserRepository {
@@ -8,13 +9,7 @@ export class UserRepository {
     constructor(private dataSource: RestDataSource) {
     }
 
-    getUser(username: string, password: string): User {
-        let userData: User = new User();
-        this.dataSource.getData("/users/" + username + "/" + password).then(
-            response => {
-                userData = response;
-            }
-        );
-        return userData;
+    getUserData(username: string, password: string) : Observable<User> {        
+        return this.dataSource.getData("/users/" + username + "/" + password);
     }
 }

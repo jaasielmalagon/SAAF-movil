@@ -1,7 +1,5 @@
 import {Injectable} from '@angular/core';
 import {Http} from '@angular/http';
-import {User} from './Objects/user.model';
-import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 const PROTOCOL = 'http';
@@ -18,7 +16,8 @@ export class RestDataSource {
     getData(url: string) {
         return this.http.get(this.baseUrl + url).pipe(
             map(response => response.json())
-        ).toPromise();
+        );
+        //return this.http.get(this.baseUrl + "/products").pipe(map(response => response.json()));
     }
 
 }
